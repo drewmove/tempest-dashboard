@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Dashboard</title>
+    <meta http-equiv="refresh" content="60">
+</head>
+<body>
+    <h1>Weather Dashboard</h1>
+    <div>
+        {% for data in weather_data %}
+        <div style="border: 1px solid; margin: 10px; padding: 10px;">
+            <h2>{{ data.station_name }}</h2>
+            <p>Pressure: {{data.sea_level_pressure}} Trend: <b>{{ data.pressure_trend}}</b></p>
+            <p>Temperature: {{ data.temperature }}°F Feels Like: {{ data.feels_like }}°F Heat Index: {{ data.heat_index}}°F </p>
+            <p>Humidity: {{ data.humidity }}% Dew Point {{data.dew_point}}°F</p>
+            <p>Wind Speed: {{ data.wind_speed }} Gusting to: {{data.wind_gust}} Knts</p>
+            <p>Wind Direction: {{data.wind_direction }} Degrees</p>
+            <p>Last Updated: {{ data.updated_at|date:"r" }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
