@@ -6,6 +6,7 @@ class WeatherStation(models.Model):
     name = models.CharField(max_length=100)
     station_id = models.CharField(max_length=50, unique=True)
     access_token = models.CharField(max_length=100)
+    lastsample = models.FloatField(default=0)
 
     def __str__(self):
         return self.name
